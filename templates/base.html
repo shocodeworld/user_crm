@@ -18,7 +18,7 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
         main {
-            width: 80%;
+            width: 800px;
             margin: 0 auto;
             padding: 10px 0;
         }
@@ -34,7 +34,7 @@
             height: 3rem;
         }
         table th, table td {
-            border: 1px solid #ccc;
+            border: 1px solid #e7e7e7;
             padding: .4rem;
             text-align: center;
         }
@@ -42,9 +42,22 @@
             transition: background-color .3s;
             background-color: rgb(243, 243, 243);
         }
+        table.vertical th{
+            text-align: right;
+        }
+        table.vertical td {
+            text-align: left;
+        }
+        .actions {
+            display: flex;
+            margin: 1rem 0;
+        }
+        .actions.middle {
+            justify-content: center;
+            margin: 0;
+        }
         .actions.footer,
         .actions.top {
-            display: flex;
             justify-content: end;
         }
         .actions.top {
@@ -95,7 +108,7 @@
             text-align: left;
         }
         form table th {
-            width: 120px;
+            width: 140px;
         }
         form input {
             min-width: 100%;
@@ -103,6 +116,9 @@
         }
         form input:focus {
             outline: none;
+        }
+        form input[type=checkbox] {
+            min-width: unset;
         }
         .helptext {
             display: block;
@@ -117,6 +133,7 @@
 </head>
 <body>
     <main>
+        {% block pageheader %}{% endblock pageheader %}
         {% block main %}{% endblock main %}
     </main>
 </body>

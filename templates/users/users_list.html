@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% block pageheader %}<h1>Users</h1>{% endblock pageheader %}
 
 {% block main %}
     <section class="actions top">
@@ -22,10 +23,10 @@
                     <td>{{ obj.first_name }}</td>
                     <td>{{ obj.last_name }}</td>
                     <td>
-                        <div class="actions">
+                        <div class="actions middle">
                             <a class="view" href="{% url 'users-detail' obj.pk %}">&#128196;</a>
-                            <a class="update" href="#">&#128221;</a>
-                            <a class="delete" href="#">&#10006;</a>
+                            <a class="update" href="{% url 'users-update' obj.pk %}">&#128221;</a>
+                            <a class="delete" href="{% url 'users-delete-confirmation' obj.pk %}">&#10006;</a>
                         </div>
                     </td>
                 </tr>

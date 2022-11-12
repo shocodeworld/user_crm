@@ -1,0 +1,10 @@
+<table class="vertical">
+    <tbody>
+        {% for key, value in object.items %}
+        <tr>
+            <th>{{ key|capfirst}}:</th>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block pageheader %}
+<h1>Вы уверены, что хотитие удалить юзера "{{ object.username }}" ?</h1>
+{% endblock pageheader %}
+
+
+{% block main %}
+<section>
+    {% include 'users/users_detail_table.html' %}
+</section>
+<section>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="actions footer">
+            <div>
+                <a href="{% url "users-list" %}">Нет</a>
+            </div>
+            <div>
+                <button class="delete" type="submit">Да</button>
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock main %}
