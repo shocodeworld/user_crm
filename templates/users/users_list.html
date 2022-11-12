@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+    <section>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                {% for obj in object_list %}
+                <td>{{ obj.title }}</td>
+                <td>No actions</td>
+                {% endfor %}
+            </tbody>
+        </table>f
+    </section>
+{% endblock main %}
