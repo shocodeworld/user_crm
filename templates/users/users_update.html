@@ -4,9 +4,20 @@
 {% block main %}
 <section>
     <form action="" method="POST">
-        {{ form.as_p }}
         {% csrf_token %}
-        <input type="submit" value="save">
+        <table>
+            <tbody>
+                {{ form }}
+            </tbody>
+        </table>
+        <div class="actions footer">
+            <div>
+                <a href="{% url "users-list" %}">Cancel</a>
+            </div>
+            <div>
+                <button class="create" type="submit">Save</button>
+            </div>
+        </div>
     </form>
 </section>
 {% endblock main %}

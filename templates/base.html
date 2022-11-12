@@ -7,6 +7,9 @@
     <title>Document</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
         html, body {
             margin: 0;
             padding: 0;
@@ -32,34 +35,41 @@
         }
         table th, table td {
             border: 1px solid #ccc;
-            padding: .4rem 0;
+            padding: .4rem;
             text-align: center;
         }
         table tbody tr:hover {
             transition: background-color .3s;
             background-color: rgb(243, 243, 243);
         }
-        .actions {
-        }
+        .actions.footer,
         .actions.top {
             display: flex;
             justify-content: end;
+        }
+        .actions.top {
             margin-bottom: 10px;
         }
-        .actions a {
+        .actions.top a,
+        .actions.top button {
+            padding: 10px 16px;
+        }
+        .actions a,
+        .actions button {
             display: inline-block;
             text-decoration: none;
             background-color: rgb(97, 97, 206);
             color: white;
             font-size: 1.2em;
-            padding: .5rem .5rem;
-            border-radius: 100rem;
+            padding: .4rem .4rem;
             line-height: 1rem;
             margin: 0 .1rem;
+            outline: none;
+            border: none;
+            border-radius: 2px;
         }
         .actions .create {
             background-color: #04AA6D;
-            padding: 10px 16px;
         }
 
         .actions .delete {
@@ -68,6 +78,40 @@
 
         .actions .update {
             background-color: rgb(174, 86, 223);
+        }
+        .actions.footer {
+            padding: 1rem 0;
+            justify-content: space-between;
+        }
+        .actions.footer a,
+        .actions.footer button {
+            padding: .7rem 1rem;
+        }
+        form table {
+            table-layout: fixed;
+        }
+        form table th,
+        form table td {
+            text-align: left;
+        }
+        form table th {
+            width: 120px;
+        }
+        form input {
+            min-width: 100%;
+            border: none;
+        }
+        form input:focus {
+            outline: none;
+        }
+        .helptext {
+            display: block;
+            text-align: left;
+            color:rgb(171, 167, 167);
+            font-size: .9em;
+        }
+        .errorlist {
+            color: red;
         }
     </style>
 </head>
