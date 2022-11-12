@@ -2,8 +2,10 @@
 
 
 {% block main %}
+    <section class="actions top">
+        <a class="create" href="{% url 'users-create' %}">+</a>
+    </section>
     <section>
-        <a href="{% url 'users-create' %}">Create</a>
         <table>
             <thead>
                 <th>Id</th>
@@ -15,13 +17,17 @@
             <tbody>
                 {% for obj in object_list %}
                 <tr>
-                    <td>
-                        <a href="{% url 'users-detail' obj.pk %}">{{ obj.pk }}</a>
-                    </td>
+                    <td>{{ obj.pk }}</td>
                     <td>{{ obj.username }}</td>
                     <td>{{ obj.first_name }}</td>
                     <td>{{ obj.last_name }}</td>
-                    <td>No actions</td>
+                    <td>
+                        <div class="actions">
+                            <a class="view" href="{% url 'users-detail' obj.pk %}">&#128196;</a>
+                            <a class="update" href="#">&#128221;</a>
+                            <a class="delete" href="#">&#10006;</a>
+                        </div>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
