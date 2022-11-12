@@ -3,19 +3,10 @@
 
 {% block main %}
 <section>
-    <form action="POST">
-        <table>
-            <tbody>
-                {{ form.as_p }}
-                {% csrf_token %}
-            </tbody>
-            <tfoot>
-                <td></td>
-                <td>
-                    <input type="button" value="save">
-                </td>
-            </tfoot>
-        </table>
+    <form action="" method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" value="save">
     </form>
 </section>
 {% endblock main %}

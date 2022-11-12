@@ -3,19 +3,24 @@
 
 {% block main %}
     <section>
+        <a href="{% url 'users-create' %}">Create</a>
         <table>
+            <thead>
+                <th>Id</th>
+                <th>Username</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Actions</th>
+            </thead>
             <tbody>
                 {% for obj in object_list %}
                 <tr>
-                    <th>Id</th>
-                    <td>{{ obj.pk }}</td>
-                </tr>
-                <tr>
-                    <th>Name</th>
-                    <td>{{ obj.title }}</td>
-                </tr>
-                <tr>
-                    <th>Actions</th>
+                    <td>
+                        <a href="{% url 'users-detail' obj.pk %}">{{ obj.pk }}</a>
+                    </td>
+                    <td>{{ obj.username }}</td>
+                    <td>{{ obj.first_name }}</td>
+                    <td>{{ obj.last_name }}</td>
                     <td>No actions</td>
                 </tr>
                 {% endfor %}
