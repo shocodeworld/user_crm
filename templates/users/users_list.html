@@ -4,16 +4,22 @@
 {% block main %}
     <section>
         <table>
-            <thead>
-                <th>Name</th>
-                <th>Actions</th>
-            </thead>
             <tbody>
                 {% for obj in object_list %}
-                <td>{{ obj.title }}</td>
-                <td>No actions</td>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ obj.pk }}</td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ obj.title }}</td>
+                </tr>
+                <tr>
+                    <th>Actions</th>
+                    <td>No actions</td>
+                </tr>
                 {% endfor %}
             </tbody>
-        </table>f
+        </table>
     </section>
 {% endblock main %}
