@@ -25,3 +25,15 @@ class TestUsersSearch(TestCase):
 
         response = self.client.get(url)
         self.assertEqual(response.context["object_list"].count(), 1)
+
+
+class TestUsersDetailView(TestCase):
+    def setUp(self):
+        self.user = User.objects.create(username="aziza", first_name="Aziza")
+        self.client = Client()
+
+    def test_detail_endpoint(self):
+        response = self.client.get(reverse("users-detail", args=[self.user.pk]))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "users/users_detail.html")
