@@ -9,4 +9,5 @@ urlpatterns = [
     path("<pk>", views.UserDetailView.as_view(), name="users-detail"),
     path("<pk>/update/", views.users_update, name="users-update"),
     path("<pk>/delete/", views.users_delete, name="users-delete-confirmation"),
+    path("search/", views.UserSearchView.as_view(), name="users-search"),
 ]

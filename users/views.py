@@ -23,6 +23,24 @@ class UserDetailView(DetailView):
         return ctx
 
 
+class UserSearchView(ListView):
+    template_name = "users/users_list.html"
+    queryset = User.objects.all()
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        if self.request.GET.get("search", ""):
+            search = self.request.GET.get("search", "")
+            queryset = queryset.filter(first_name__icontains=search)
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+
 def users_create(request):
     form = UserForm()
 
