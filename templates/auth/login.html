@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+{% if errors %}
+    <div class="errors">
+        <ul>
+            {% for error in errors %}
+            <li> {{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+<form action="{% url 'login' %}" method="POST">
+    {{ form }}
+    {% csrf_token %}
+    <input type="submit" value="Зайти">
+</form>
+{% endblock main %}
